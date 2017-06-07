@@ -242,15 +242,15 @@ public class RestServices {
 				String value3 = (String)row[3];
 				String value4 = (String)row[4];
 				String value5 = (String)row[5];
-				String value6 = row[6]+"";
-				String value7 = row[7]+"";
-				String value8 = row[8]+"";
-				String value9 = row[9]+"";
-				String value10 = row[10]+"";
+				String value6 = (row[6]!=null?row[6]+"":"0");
+				String value7 = (row[7]!=null?row[7]+"":"0");
+				String value8 = (row[8]!=null?row[8]+"":"0");
+				Integer value9 = (row[9]!=null?new Integer(row[9]+""):null);
+				Integer value10 = (row[10]!=null?new Integer(row[10]+""):null);
 				
 				list.add(new Detail(value2, value3, value4, value5,
 						new Integer(value6), new Integer(value7), new Integer(value8), 
-						new Integer(value9), new Integer(value10)));
+						value9, value10));
 			}
 			menuList.add(new Menu(day, dayName, list));
 			log.info("weeklymenu::weeklyMenuList != null");
